@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "suelo",
+    "name": "Suelo",
     "slug": "suelo",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -9,9 +9,11 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ardakestane.suelo"
     },
     "android": {
+      "package": "com.ardakestane.suelo",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -43,6 +45,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "d555dbb0-d228-4f05-a2bf-d3ca46bea47e"
+      }
+    },
+    "owner": "ardakestane"
   }
 }
