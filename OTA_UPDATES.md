@@ -34,12 +34,18 @@ This project is configured with EAS Update for over-the-air updates. This allows
 
 ### Preview Channel
 ```bash
-eas update --branch preview --channel preview --message "Your update message"
+eas update --channel preview --message "Your update message"
 ```
 
 ### Production Channel
 ```bash
-eas update --branch production --channel production --message "Your update message"
+eas update --channel production --message "Your update message"
+```
+
+**Alternative (using --auto):**
+```bash
+# Automatically uses channel from build profile
+eas update --auto --message "Your update message"
 ```
 
 ## Runtime Version
@@ -90,7 +96,7 @@ View updates at: https://expo.dev/accounts/ardakestane/projects/suelo/updates
 
 3. Make code changes and publish update:
    ```bash
-   eas update --branch preview --channel preview
+   eas update --channel preview
    ```
 
 4. Open the app - it should automatically download and apply the update
@@ -99,7 +105,7 @@ View updates at: https://expo.dev/accounts/ardakestane/projects/suelo/updates
 
 To rollback an update:
 ```bash
-eas update:rollback --branch <branch> --channel <channel>
+eas update:rollback --channel <channel>
 ```
 
 ## Best Practices

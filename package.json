@@ -10,7 +10,8 @@
     "ios:build": "npx expo run:ios",
     "android:build": "npx expo run:android",
     "web": "expo start --web",
-    "lint": "expo lint"
+    "update:preview": "eas update --branch preview --message \"Update preview\"",
+    "update:production": "eas update --branch production --message \"Update production\""
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",

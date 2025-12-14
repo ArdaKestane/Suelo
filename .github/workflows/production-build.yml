@@ -90,7 +90,7 @@ jobs:
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
         run: |
           MESSAGE="Production update from ${{ github.ref }}"
-          eas update --branch production --channel production --message "$MESSAGE" --non-interactive
+          eas update --channel production --message "$MESSAGE" --non-interactive
 
       - name: Create GitHub Release
         if: github.event_name == 'release'

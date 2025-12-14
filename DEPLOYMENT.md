@@ -72,17 +72,41 @@ Check build status at: https://expo.dev/accounts/ardakestane/projects/suelo/buil
 
 This project is configured with EAS Update for OTA updates. See [OTA_UPDATES.md](./OTA_UPDATES.md) for complete documentation.
 
-### Quick OTA Update Commands
+## Local Build Commands
 
-**Preview Channel:**
-```bash
-eas update --branch preview --channel preview --message "Your update message"
-```
+### iOS Builds
 
-**Production Channel:**
-```bash
-eas update --branch production --channel production --message "Your update message"
-```
+#### Workflow Example
+
+1. **Initial Build for TestFlight:**
+   ```bash
+   eas build --platform ios --profile preview
+   ```
+   - This build listens to the "preview" channel
+   - Submit to TestFlight
+
+2. **Make JavaScript/UI Changes:**
+   - Edit your code (no native changes)
+   - Test locally
+
+3. **Publish OTA Update:**
+   ```bash
+   npm run update:preview
+   ```
+   - TestFlight users get the update automatically on next app launch
+
+4. **For Production (App Store):**
+   ```bash
+   eas build --platform ios --profile production
+   npm run update:production
+   ```
+
+#### Important Notes
+
+- **OTA updates only work for JavaScript and asset changes**
+- **Native code changes** (new plugins, native modules, etc.) still require a new build
+- The app automatically checks for updates on launch
+- Updates are applied seamlessly in the background
 
 ### Automated Updates
 

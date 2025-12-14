@@ -42,7 +42,7 @@ jobs:
       - name: Publish Production Update
         run: |
           MESSAGE="${{ github.event.inputs.message || 'Production update from ' }}${{ github.sha }}"
-          eas update --branch production --channel production --message "$MESSAGE" --non-interactive
+          eas update --channel production --message "$MESSAGE" --non-interactive
 
       - name: Create deployment notification
         uses: actions/github-script@v7

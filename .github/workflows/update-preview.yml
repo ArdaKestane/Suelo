@@ -42,7 +42,7 @@ jobs:
       - name: Publish Preview Update
         run: |
           MESSAGE="${{ github.event.inputs.message || 'Preview update from ' }}${{ github.sha }}"
-          eas update --branch preview --channel preview --message "$MESSAGE" --non-interactive
+          eas update --channel preview --message "$MESSAGE" --non-interactive
 
       - name: Comment update status
         if: github.event_name == 'pull_request'

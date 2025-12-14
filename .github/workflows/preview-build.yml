@@ -53,7 +53,7 @@ jobs:
         if: github.event_name == 'push'
         run: |
           MESSAGE="Preview build update from ${{ github.sha }}"
-          eas update --branch preview --channel preview --message "$MESSAGE" --non-interactive
+          eas update --channel preview --message "$MESSAGE" --non-interactive
 
       - name: Comment build status
         uses: actions/github-script@v7

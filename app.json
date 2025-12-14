@@ -14,12 +14,14 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.ardakestane.suelo",
+      "buildNumber": "2",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
       "package": "com.ardakestane.suelo",
+      "versionCode": 1,
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -60,6 +62,9 @@
         "projectId": "d555dbb0-d228-4f05-a2bf-d3ca46bea47e"
       }
     },
-    "owner": "ardakestane"
+    "owner": "ardakestane",
+    "updates": {
+      "url": "https://u.expo.dev/d555dbb0-d228-4f05-a2bf-d3ca46bea47e"
+    }
   }
 }
