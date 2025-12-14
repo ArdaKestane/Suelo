@@ -1,5 +1,6 @@
 import { Colors } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
+import { useTranslation } from '@/hooks/use-translation';
 import * as Linking from 'expo-linking';
 import {
   Clock,
@@ -84,6 +85,7 @@ export default function StoresScreen() {
   const colors = Colors[colorScheme ?? 'light'];
   const insets = useSafeAreaInsets();
   const { width, height } = Dimensions.get('window');
+  const { t } = useTranslation();
 
   const filteredStores = stores.filter(
     (store) =>
@@ -142,7 +144,7 @@ export default function StoresScreen() {
                 },
               ]}
             >
-              {item.status}
+              {t(`common.${item.status.toLowerCase()}`)}
             </Text>
           </View>
         </View>
@@ -161,7 +163,7 @@ export default function StoresScreen() {
         <View style={styles.detailRow}>
           <Clock width={16} height={16} color={colors.textSecondary} />
           <Text style={[styles.detailText, { color: colors.textSecondary }]}>
-            Closes at {item.closingTime}
+            {t('stores.closesAt', { time: item.closingTime })}
           </Text>
         </View>
       </View>
@@ -175,7 +177,7 @@ export default function StoresScreen() {
         >
           <Compass width={18} height={18} color={colors.primary} />
           <Text style={[styles.actionText, { color: colors.primary }]}>
-            Directions
+            {t('common.directions')}
           </Text>
         </TouchableOpacity>
         <View style={{ flex: 1 }} />
@@ -244,6 +246,7 @@ export default function StoresScreen() {
                 onPress={() => setSelectedStore(null)}
                 hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
                 activeOpacity={0.7}
+                accessibilityLabel={t('common.close')}
               >
                 <Xmark width={18} height={18} color={colors.textSecondary} />
               </TouchableOpacity>
@@ -276,7 +279,7 @@ export default function StoresScreen() {
                     },
                   ]}
                 >
-                  {selectedStore.status}
+                  {t(`common.${selectedStore.status.toLowerCase()}`)}
                 </Text>
               </View>
               <View style={styles.popupDetails}>
@@ -294,11 +297,11 @@ export default function StoresScreen() {
                   <Text
                     style={[styles.popupDetailText, { color: colors.textSecondary }]}
                   >
-                    Closes at {selectedStore.closingTime}
+                    {t('stores.closesAt', { time: selectedStore.closingTime })}
                   </Text>
                 </View>
                 <Text style={[styles.popupDistance, { color: colors.primary }]}>
-                  {selectedStore.distance} away
+                  {selectedStore.distance} {t('stores.away')}
                 </Text>
               </View>
               <TouchableOpacity
@@ -310,7 +313,7 @@ export default function StoresScreen() {
               >
                 <Compass width={16} height={16} color={colors.surface} />
                 <Text style={[styles.popupButtonText, { color: colors.surface }]}>
-                  Get Directions
+                  {t('common.getDirections')}
                 </Text>
               </TouchableOpacity>
             </View>
@@ -329,7 +332,7 @@ export default function StoresScreen() {
             <Search width={20} height={20} color={colors.textSecondary} />
             <TextInput
               style={[styles.searchInput, { color: colors.text }]}
-              placeholder="Find a store..."
+              placeholder={t('stores.searchPlaceholder')}
               placeholderTextColor={colors.textLight}
               value={searchQuery}
               onChangeText={setSearchQuery}
@@ -347,7 +350,7 @@ export default function StoresScreen() {
       >
         <View style={styles.listHandle} />
         <Text style={[styles.listTitle, { color: colors.text }]}>
-          Nearby Stores ({filteredStores.length})
+          {t('stores.nearbyStores')} ({filteredStores.length})
         </Text>
         <FlatList
           data={filteredStores}

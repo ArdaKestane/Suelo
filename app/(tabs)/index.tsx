@@ -1,6 +1,7 @@
 import { HeaderPattern } from '@/components/ui/HeaderPattern';
 import { Colors } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
+import { useTranslation } from '@/hooks/use-translation';
 import {
   Bell,
   CreditCard,
@@ -44,6 +45,7 @@ export default function HomeScreen() {
   const colors = Colors[colorScheme ?? 'light'];
   const userName = 'Arda';
   const insets = useSafeAreaInsets();
+  const { t } = useTranslation();
 
   const [starBalance, setStarBalance] = useState(14);
   const [freeDrinks, setFreeDrinks] = useState(2);
@@ -184,7 +186,7 @@ export default function HomeScreen() {
       <View style={[styles.header, { paddingTop: insets.top }]}>
         <View style={styles.headerTop}>
           <Text style={[styles.greeting, { color: colors.surface }]}>
-            HI {userName.toUpperCase()}
+            {t('home.welcome')} {userName.toUpperCase()}
           </Text>
           <View style={styles.headerIcons}>
             <TouchableOpacity style={styles.iconButton}>
@@ -202,7 +204,7 @@ export default function HomeScreen() {
         >
           <View style={styles.starBalance}>
             <Text style={[styles.freeDrinkText, { color: colors.surface }]}>
-              Free drink{freeDrinks !== 1 ? 's' : ''}
+              {t('home.freeDrinks')}
             </Text>
             <View
               style={[
@@ -244,7 +246,7 @@ export default function HomeScreen() {
 
           <View style={styles.badgesContainer}>
             <Text style={[styles.badgesLabel, { color: colors.surface }]}>
-              Badges
+              {t('home.rewards')}
             </Text>
             <View
               style={[
@@ -323,13 +325,13 @@ export default function HomeScreen() {
               <Text
                 style={[styles.membershipChipText, { color: colors.surface }]}
               >
-                SUELO MEMBER
+                {t('home.sueloMember')}
               </Text>
             </View>
             <Text
               style={[styles.cardSubtitle, { color: colors.textSecondary }]}
             >
-              Identify your credit/debit card to add money to your account
+              {t('home.cardDescription')}
             </Text>
             <View style={styles.accountBalanceRow}>
               <View
@@ -344,7 +346,7 @@ export default function HomeScreen() {
                 <Text
                   style={[styles.balanceLabel, { color: colors.textSecondary }]}
                 >
-                  Account balance
+                  {t('home.accountBalance')}
                 </Text>
                 <Text style={[styles.balanceAmount, { color: colors.text }]}>
                   200₺
@@ -358,7 +360,7 @@ export default function HomeScreen() {
               ]}
             >
               <Text style={[styles.addMoneyText, { color: colors.surface }]}>
-                Add Money
+                {t('home.addMoney')}
               </Text>
             </TouchableOpacity>
           </View>
@@ -367,7 +369,7 @@ export default function HomeScreen() {
           <View style={styles.discoverSection}>
             <View style={styles.sectionHeader}>
               <Text style={[styles.sectionTitle, { color: colors.text }]}>
-                Discover
+                {t('home.discover')}
               </Text>
             </View>
             <ScrollView
@@ -382,14 +384,14 @@ export default function HomeScreen() {
                   id: 1,
                   name: 'Cappuccino',
                   price: '85₺',
-                  tag: 'Trending',
+                  tag: t('home.trending'),
                   image: require('../../assets/images/coffee/cappuccino.jpg'),
                 },
                 {
                   id: 2,
                   name: 'Iced Americano',
                   price: '75₺',
-                  tag: 'New',
+                  tag: t('home.new'),
                   image: require('../../assets/images/coffee/iced-americano.jpg'),
                 },
                 {
@@ -462,12 +464,12 @@ export default function HomeScreen() {
             >
               <Gift width={32} height={32} color={colors.star} />
               <Text style={[styles.campaignTitle, { color: colors.surface }]}>
-                Special Offer
+                {t('home.specialOffer')}
               </Text>
               <Text
                 style={[styles.campaignDescription, { color: colors.surface }]}
               >
-                Get 2x stars on all orders this week!
+                {t('home.specialOfferDescription')}
               </Text>
               <TouchableOpacity
                 style={[
@@ -478,7 +480,7 @@ export default function HomeScreen() {
                 <Text
                   style={[styles.campaignButtonText, { color: colors.primary }]}
                 >
-                  Learn More
+                  {t('home.learnMore')}
                 </Text>
               </TouchableOpacity>
             </View>

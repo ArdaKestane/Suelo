@@ -13,13 +13,13 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.ardakestane.sueloApp",
+      "bundleIdentifier": "com.ardakestane.suelo",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
-      "package": "com.ardakestane.sueloApp",
+      "package": "com.ardakestane.suelo",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",

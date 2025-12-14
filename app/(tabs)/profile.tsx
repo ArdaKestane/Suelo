@@ -1,5 +1,6 @@
 import { Colors } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
+import { useTranslation } from '@/hooks/use-translation';
 import { CoffeeCup, Star, Trophy, User } from 'iconoir-react-native';
 import React from 'react';
 import {
@@ -56,6 +57,7 @@ export default function ProfileScreen() {
   const colors = Colors[colorScheme ?? 'light'];
   const insets = useSafeAreaInsets();
   const { width } = Dimensions.get('window');
+  const { t } = useTranslation();
 
   // Calculate max count for progress bars
   const maxCount = Math.max(...consumptionData.map((d) => d.count));
@@ -89,10 +91,10 @@ export default function ProfileScreen() {
             </View>
             <View style={styles.userInfo}>
               <Text style={[styles.userName, { color: colors.text }]}>
-                Coffee Lover
+                {t('profile.coffeeLover')}
               </Text>
               <Text style={[styles.userLevel, { color: colors.textSecondary }]}>
-                Gold Member
+                {t('profile.goldMember')}
               </Text>
             </View>
           </View>
@@ -122,7 +124,7 @@ export default function ProfileScreen() {
                 {totalCoffees}
               </Text>
               <Text style={[styles.statLabel, { color: colors.textSecondary }]}>
-                Total Coffees
+                {t('profile.totalCoffees')}
               </Text>
             </View>
 
@@ -149,7 +151,7 @@ export default function ProfileScreen() {
                 Top 1%
               </Text>
               <Text style={[styles.statLabel, { color: colors.textSecondary }]}>
-                Drinker Rank
+                {t('profile.drinkerRank')}
               </Text>
             </View>
           </View>
@@ -158,7 +160,7 @@ export default function ProfileScreen() {
         {/* Favorite Drink Section */}
         <View style={styles.section}>
           <Text style={[styles.sectionTitle, { color: colors.text }]}>
-            Your Favorite
+            {t('profile.yourFavorite')}
           </Text>
           <View
             style={[
@@ -176,14 +178,14 @@ export default function ProfileScreen() {
                   fill={colors.surface}
                 />
                 <Text style={[styles.favoriteLabel, { color: colors.surface }]}>
-                  Most Ordered
+                  {t('profile.mostOrdered')}
                 </Text>
               </View>
               <Text style={[styles.favoriteName, { color: colors.surface }]}>
                 {favoriteDrink.name}
               </Text>
               <Text style={[styles.favoriteCount, { color: colors.surface }]}>
-                {favoriteDrink.count} times ordered
+                {favoriteDrink.count} {t('profile.timesOrdered')}
               </Text>
             </View>
           </View>
@@ -192,7 +194,7 @@ export default function ProfileScreen() {
         {/* Consumption History */}
         <View style={styles.section}>
           <Text style={[styles.sectionTitle, { color: colors.text }]}>
-            Consumption History
+            {t('profile.consumptionHistory')}
           </Text>
           {consumptionData.map((item) => (
             <View

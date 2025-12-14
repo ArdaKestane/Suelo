@@ -1,0 +1,84 @@
+{
+  "common": {
+    "search": "Search",
+    "filter": "Filter",
+    "all": "All",
+    "hot": "Hot",
+    "cold": "Cold",
+    "spicy": "Spicy",
+    "seasonal": "Seasonal",
+    "open": "Open",
+    "busy": "Busy",
+    "closed": "Closed",
+    "call": "Call",
+    "directions": "Directions",
+    "close": "Close",
+    "getDirections": "Get Directions"
+  },
+  "tabs": {
+    "home": "Home",
+    "menu": "Menu",
+    "qr": "QR",
+    "stores": "Stores",
+    "profile": "Profile"
+  },
+  "home": {
+    "welcome": "Welcome",
+    "goodMorning": "Good morning",
+    "goodAfternoon": "Good afternoon",
+    "goodEvening": "Good evening",
+    "stars": "Stars",
+    "freeDrinks": "Free Drinks",
+    "drinksUntilReward": "Drinks until reward",
+    "rewards": "Rewards",
+    "featured": "Featured",
+    "popular": "Popular",
+    "new": "New",
+    "trending": "Trending",
+    "sueloMember": "SUELO MEMBER",
+    "cardDescription": "Identify your credit/debit card to add money to your account",
+    "accountBalance": "Account balance",
+    "addMoney": "Add Money",
+    "discover": "Discover",
+    "specialOffer": "Special Offer",
+    "specialOfferDescription": "Get 2x stars on all orders this week!",
+    "learnMore": "Learn More"
+  },
+  "menu": {
+    "title": "Menu",
+    "searchPlaceholder": "Search products...",
+    "noProducts": "No products found"
+  },
+  "stores": {
+    "title": "Stores",
+    "searchPlaceholder": "Find a store...",
+    "nearbyStores": "Nearby Stores",
+    "closesAt": "Closes at {{time}}",
+    "away": "away",
+    "mapView": "Map View"
+  },
+  "profile": {
+    "title": "Profile",
+    "coffeeLover": "Coffee Lover",
+    "goldMember": "Gold Member",
+    "totalCoffees": "Total Coffees",
+    "drinkerRank": "Drinker Rank",
+    "yourFavorite": "Your Favorite",
+    "mostOrdered": "Most Ordered",
+    "timesOrdered": "times ordered",
+    "consumptionHistory": "Consumption History"
+  },
+  "product": {
+    "addToCart": "Add to Cart",
+    "description": "Description",
+    "allergies": "Allergies",
+    "category": "Category",
+    "ingredients": "Ingredients",
+    "calories": "Calories",
+    "caffeine": "Caffeine",
+    "contains": "Contains"
+  },
+  "qr": {
+    "title": "Scan QR"
+  }
+}

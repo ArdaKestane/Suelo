@@ -1,5 +1,6 @@
 import { Colors } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
+import { useTranslation } from '@/hooks/use-translation';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { ArrowLeft, Circle } from 'iconoir-react-native';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
@@ -91,6 +92,7 @@ export default function ProductDetailScreen() {
   const colors = Colors[colorScheme ?? 'light'];
   const product = getProduct(id || '1');
   const insets = useSafeAreaInsets();
+  const { t } = useTranslation();
 
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
@@ -122,24 +124,24 @@ export default function ProductDetailScreen() {
 
           <View style={styles.divider} />
 
-          <Text style={[styles.sectionTitle, { color: colors.text }]}>Description</Text>
+          <Text style={[styles.sectionTitle, { color: colors.text }]}>{t('product.description')}</Text>
           <Text style={[styles.description, { color: colors.textSecondary }]}>{product.description}</Text>
 
           {/* Nutrition Info */}
           <View style={styles.nutritionRow}>
             <View style={styles.nutritionItem}>
-              <Text style={[styles.nutritionLabel, { color: colors.textSecondary }]}>Calories</Text>
+              <Text style={[styles.nutritionLabel, { color: colors.textSecondary }]}>{t('product.calories')}</Text>
               <Text style={[styles.nutritionValue, { color: colors.text }]}>{product.calories}</Text>
             </View>
             <View style={styles.nutritionItem}>
-              <Text style={[styles.nutritionLabel, { color: colors.textSecondary }]}>Caffeine</Text>
+              <Text style={[styles.nutritionLabel, { color: colors.textSecondary }]}>{t('product.caffeine')}</Text>
               <Text style={[styles.nutritionValue, { color: colors.text }]}>{product.caffeine}</Text>
             </View>
           </View>
 
           {/* Ingredients */}
           <View style={styles.divider} />
-          <Text style={[styles.sectionTitle, { color: colors.text }]}>Ingredients</Text>
+          <Text style={[styles.sectionTitle, { color: colors.text }]}>{t('product.ingredients')}</Text>
           <Text style={[styles.ingredients, { color: colors.textSecondary }]}>
             {product.ingredients.join(', ')}
           </Text>
@@ -151,9 +153,9 @@ export default function ProductDetailScreen() {
               <View style={styles.allergiesContainer}>
                 {/* <AlertTriangle width={20} height={20} color={colors.warning} /> */}
                 <View style={styles.allergiesContent}>
-                  <Text style={[styles.sectionTitle, { color: colors.text }]}>Allergens</Text>
+                  <Text style={[styles.sectionTitle, { color: colors.text }]}>{t('product.allergies')}</Text>
                   <Text style={[styles.allergies, { color: colors.textSecondary }]}>
-                    Contains: {product.allergies.join(', ')}
+                    {t('product.contains')}: {product.allergies.join(', ')}
                   </Text>
                 </View>
               </View>
@@ -168,7 +170,7 @@ export default function ProductDetailScreen() {
             // TODO: Add to cart functionality
           }}
         >
-          <Text style={[styles.addToCartText, { color: colors.surface }]}>Add to Cart</Text>
+          <Text style={[styles.addToCartText, { color: colors.surface }]}>{t('product.addToCart')}</Text>
         </TouchableOpacity>
       </ScrollView>
     </View>

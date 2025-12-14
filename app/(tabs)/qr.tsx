@@ -1,11 +1,13 @@
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
+import { useTranslation } from '@/hooks/use-translation';
 import { StyleSheet } from 'react-native';
 
 export default function QRScreen() {
+  const { t } = useTranslation();
   return (
     <ThemedView style={styles.container}>
-      <ThemedText type="title">Scan QR</ThemedText>
+      <ThemedText type="title">{t('qr.title')}</ThemedText>
     </ThemedView>
   );
 }

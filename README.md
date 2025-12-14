@@ -29,7 +29,7 @@ A modern React Native coffee shop application built with Expo.
 
 ### Installation
 
-```bash
+   ```bash
 # Install dependencies
 npm install --legacy-peer-deps
 

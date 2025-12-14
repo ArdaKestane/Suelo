@@ -1,0 +1,84 @@
+{
+  "common": {
+    "search": "Ara",
+    "filter": "Filtrele",
+    "all": "Tümü",
+    "hot": "Sıcak",
+    "cold": "Soğuk",
+    "spicy": "Baharatlı",
+    "seasonal": "Mevsimsel",
+    "open": "Açık",
+    "busy": "Yoğun",
+    "closed": "Kapalı",
+    "call": "Ara",
+    "directions": "Yol Tarifi",
+    "close": "Kapat",
+    "getDirections": "Yol Tarifi Al"
+  },
+  "tabs": {
+    "home": "Ana Sayfa",
+    "menu": "Menü",
+    "qr": "QR",
+    "stores": "Mağazalar",
+    "profile": "Profil"
+  },
+  "home": {
+    "welcome": "Hoş geldin",
+    "goodMorning": "Günaydın",
+    "goodAfternoon": "İyi öğleden sonralar",
+    "goodEvening": "İyi akşamlar",
+    "stars": "Yıldız",
+    "freeDrinks": "İkram İçecek",
+    "drinksUntilReward": "İkram İçeceklerine kalan",
+    "rewards": "Ödüller",
+    "featured": "Öne Çıkanlar",
+    "popular": "Popüler",
+    "new": "Yeni",
+    "trending": "Popüler",
+    "sueloMember": "SUELO ÜYESİ",
+    "cardDescription": "Hesabınıza para eklemek için kredi/banka kartınızı tanımlayın",
+    "accountBalance": "Hesap bakiyesi",
+    "addMoney": "Para Ekle",
+    "discover": "Keşfet",
+    "specialOffer": "Özel Teklif",
+    "specialOfferDescription": "Bu hafta tüm siparişlerde 2x yıldız kazanın!",
+    "learnMore": "Daha Fazla Bilgi"
+  },
+  "menu": {
+    "title": "Menü",
+    "searchPlaceholder": "Ürün ara...",
+    "noProducts": "Ürün bulunamadı"
+  },
+  "stores": {
+    "title": "Mağazalar",
+    "searchPlaceholder": "Mağaza bul...",
+    "nearbyStores": "Yakındaki Mağazalar",
+    "closesAt": "Saat {{time}}'da kapanıyor",
+    "away": "uzaklıkta",
+    "mapView": "Harita Görünümü"
+  },
+  "profile": {
+    "title": "Profil",
+    "coffeeLover": "Kahve Sever",
+    "goldMember": "Altın Üye",
+    "totalCoffees": "Toplam Kahve",
+    "drinkerRank": "İçici Sıralaması",
+    "yourFavorite": "Favoriniz",
+    "mostOrdered": "En Çok Sipariş",
+    "timesOrdered": "kez sipariş verildi",
+    "consumptionHistory": "Tüketim Geçmişi"
+  },
+  "product": {
+    "addToCart": "Sepete Ekle",
+    "description": "Açıklama",
+    "allergies": "Alerjenler",
+    "category": "Kategori",
+    "ingredients": "İçindekiler",
+    "calories": "Kalori",
+    "caffeine": "Kafein",
+    "contains": "İçerir"
+  },
+  "qr": {
+    "title": "QR Kod Tara"
+  }
+}

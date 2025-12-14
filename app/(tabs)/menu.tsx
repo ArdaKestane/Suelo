@@ -1,5 +1,6 @@
 import { Colors } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
+import { useTranslation } from '@/hooks/use-translation';
 import { useRouter } from 'expo-router';
 import {
   Circle,
@@ -26,12 +27,12 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 // Filter types
 type FilterType = 'All' | 'Hot' | 'Cold' | 'Spicy' | 'Seasonal';
 
-const FILTERS: { type: FilterType; icon: any }[] = [
-  { type: 'All', icon: FilterList },
-  { type: 'Hot', icon: CoffeeCup },
-  { type: 'Cold', icon: SnowFlake },
-  { type: 'Spicy', icon: FireFlame },
-  { type: 'Seasonal', icon: Leaf },
+const FILTERS: { type: FilterType; icon: any; key: string }[] = [
+  { type: 'All', icon: FilterList, key: 'common.all' },
+  { type: 'Hot', icon: CoffeeCup, key: 'common.hot' },
+  { type: 'Cold', icon: SnowFlake, key: 'common.cold' },
+  { type: 'Spicy', icon: FireFlame, key: 'common.spicy' },
+  { type: 'Seasonal', icon: Leaf, key: 'common.seasonal' },
 ];
 
 // Mock product data
@@ -115,6 +116,7 @@ export default function MenuScreen() {
   const colors = Colors[colorScheme ?? 'light'];
   const router = useRouter();
   const insets = useSafeAreaInsets();
+  const { t } = useTranslation();
 
   const filteredProducts = products.filter((product) => {
     const matchesSearch =
@@ -175,7 +177,7 @@ export default function MenuScreen() {
           { backgroundColor: colors.surface, paddingTop: insets.top },
         ]}
       >
-        <Text style={[styles.headerTitle, { color: colors.text }]}>Menu</Text>
+        <Text style={[styles.headerTitle, { color: colors.text }]}>{t('menu.title')}</Text>
         <View
           style={[
             styles.searchContainer,
@@ -185,7 +187,7 @@ export default function MenuScreen() {
           <Search width={20} height={20} color={colors.textSecondary} />
           <TextInput
             style={[styles.searchInput, { color: colors.text }]}
-            placeholder="Search products..."
+            placeholder={t('menu.searchPlaceholder')}
             placeholderTextColor={colors.textLight}
             value={searchQuery}
             onChangeText={setSearchQuery}
@@ -228,7 +230,7 @@ export default function MenuScreen() {
                       : { color: colors.textSecondary },
                   ]}
                 >
-                  {filter.type}
+                  {t(filter.key)}
                 </Text>
               </TouchableOpacity>
             );
@@ -248,7 +250,7 @@ export default function MenuScreen() {
         ListEmptyComponent={
           <View style={styles.emptyContainer}>
             <Text style={[styles.emptyText, { color: colors.textSecondary }]}>
-              No products found
+              {t('menu.noProducts')}
             </Text>
           </View>
         }
