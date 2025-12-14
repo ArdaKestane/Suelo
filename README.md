@@ -1,50 +1,75 @@
-# Welcome to your Expo app 👋
+# Suelo - Coffee Shop App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A modern React Native coffee shop application built with Expo.
 
-## Get started
+## Features
 
-1. Install dependencies
+- 🏠 **Home**: Featured products and promotions
+- 📖 **Menu**: Browse coffee products with filters (Hot, Cold, Spicy, Seasonal)
+- 📱 **QR Code**: Scan QR codes for quick access
+- 🗺️ **Stores**: Find nearby locations with map view
+- 👤 **Profile**: Track your coffee consumption and favorites
 
-   ```bash
-   npm install
-   ```
+## Tech Stack
 
-2. Start the app
+- **Framework**: Expo Router (file-based routing)
+- **UI**: React Native with custom components
+- **Icons**: Iconoir React Native
+- **Animations**: React Native Reanimated
+- **Build**: EAS Build
+- **Updates**: EAS Update (OTA)
 
-   ```bash
-   npx expo start
-   ```
+## Getting Started
 
-In the output, you'll find options to open the app in a
+### Prerequisites
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- Node.js 20+ (recommended)
+- npm or yarn
+- Expo CLI or EAS CLI
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+### Installation
 
 ```bash
-npm run reset-project
+# Install dependencies
+npm install --legacy-peer-deps
+
+# Start development server
+npm start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Development
 
-## Learn more
+```bash
+# iOS
+npm run ios
 
-To learn more about developing your project with Expo, look at the following resources:
+# Android
+npm run android
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+# Web
+npm run web
+```
 
-## Join the community
+## Building for Production
 
-Join our community of developers creating universal apps.
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed build and deployment instructions.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Over-The-Air Updates
+
+This project uses EAS Update for OTA updates. See [OTA_UPDATES.md](./OTA_UPDATES.md) for complete documentation.
+
+## Project Structure
+
+```
+app/
+  (tabs)/          # Tab navigation screens
+  product/         # Product detail pages
+components/        # Reusable components
+  CustomTabBar.tsx # Custom bottom navigation
+constants/         # Theme and constants
+assets/            # Images and icons
+```
+
+## License
+
+Private project

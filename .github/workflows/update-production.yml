@@ -1,0 +1,59 @@
+name: OTA Update - Production
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths-ignore:
+      - '**.md'
+      - '.github/**'
+      - 'eas.json'
+  workflow_dispatch:
+    inputs:
+      message:
+        description: 'Update message'
+        required: false
+        default: 'Production update'
+
+jobs:
+  update:
+    name: Publish Production Update
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Setup EAS
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Publish Production Update
+        run: |
+          MESSAGE="${{ github.event.inputs.message || 'Production update from ' }}${{ github.sha }}"
+          eas update --branch production --channel production --message "$MESSAGE" --non-interactive
+
+      - name: Create deployment notification
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.repos.createDeployment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: context.sha,
+              environment: 'production',
+              description: 'Production OTA update published',
+              auto_merge: false,
+              required_contexts: []
+            })

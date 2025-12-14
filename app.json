@@ -3,6 +3,9 @@
     "name": "Suelo",
     "slug": "suelo",
     "version": "1.0.0",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "suelo",
@@ -10,10 +13,13 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.ardakestane.suelo"
+      "bundleIdentifier": "com.ardakestane.sueloApp",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
-      "package": "com.ardakestane.suelo",
+      "package": "com.ardakestane.sueloApp",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -29,6 +35,8 @@
     },
     "plugins": [
       "expo-router",
+      "expo-dev-client",
+      "expo-updates",
       [
         "expo-splash-screen",
         {
